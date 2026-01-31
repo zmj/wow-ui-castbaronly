@@ -1,0 +1,5 @@
+## Interface: 110207, 120000, 120001
+## Title: CastBarOnly
+## Notes: Hide target frame elements except cast bar
+## Version: 1.0
+CastBarOnly.lua
