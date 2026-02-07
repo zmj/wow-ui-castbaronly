@@ -242,8 +242,9 @@ local function HideFrameElements(frameType)
         end
     end
 
-    -- Hide auras
+    -- Disable mouse on the main frame so it doesn't intercept clicks
     if mainFrame then
+        mainFrame:EnableMouse(false)
         HideAurasForFrame(mainFrame)
     end
 
@@ -265,6 +266,11 @@ local function ShowFrameElements(frameType)
     end
 
     local mainFrame = _G[config.mainFrame]
+
+    -- Re-enable mouse on the main frame
+    if mainFrame then
+        mainFrame:EnableMouse(true)
+    end
 
     for _, elem in ipairs(config.hiddenElements) do
         if elem.frame and not skipShowFrames[elem.name] then
